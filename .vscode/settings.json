@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:socorro}/courses/04-sql-fundamentals/meu_primeiro_banco.db",
+            "name": "Banco-Estudos"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

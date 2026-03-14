@@ -1,1 +1,16 @@
+# Ambientes Virtuais
 .venv/
+venv/
+env/
+
+# Banco de Dados Local (Segurança e Performance)
+*.db
+*.sqlite3
+
+# Arquivos temporários do Python
+__pycache__/
+*.py[cod]
+
+# Configurações de sistema
+.DS_Store
+Thumbs.db
