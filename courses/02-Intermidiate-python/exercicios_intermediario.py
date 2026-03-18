@@ -119,10 +119,10 @@ idades = [18, 19, 20, 21, 22, 23, 24, 25, 19, 20, 21, 22, 22, 23, 23,
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
-ax1.plot(dias, temperaturas)
-ax2.hist(temperaturas,bins=6,)
-plt.show()
+#fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+#ax1.plot(dias, temperaturas)
+#ax2.hist(temperaturas,bins=6,)
+#plt.show()
 
 # ---------------------------------------------------------------------------
 # [EXTRA] EXERCÍCIO 1.6 — Múltiplas séries no mesmo gráfico
@@ -136,7 +136,10 @@ vendas_produto_a = [100, 120, 140, 130, 150, 170]
 vendas_produto_b = [80, 90, 110, 140, 135, 160]
 
 # SUA SOLUÇÃO AQUI
-
+#plt.plot(meses,vendas_produto_a,label='computadores')
+#plt.plot(meses,vendas_produto_b,label='teclados')
+#plt.legend()
+#plt.show()
 
 # ============================================================================
 # PARTE 2: DICIONÁRIOS
@@ -151,8 +154,8 @@ vendas_produto_b = [80, 90, 110, 140, 135, 160]
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
-
-
+aluno = {"nome": "Caio" ,"idade": 20, "curso": "engenharia da computação","semestre": 4}
+#print(aluno["curso"])
 # ---------------------------------------------------------------------------
 # EXERCÍCIO 2.2 — Adicionar e remover chaves
 # Partindo do dicionário "aluno" do exercício anterior:
@@ -163,7 +166,10 @@ vendas_produto_b = [80, 90, 110, 140, 135, 160]
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
-
+# aluno["universidade"]="SENAI CIMATEC"
+# aluno["linguagens"]=["Python","SQL"]
+# del aluno["idade"]
+# print(aluno)
 
 # ---------------------------------------------------------------------------
 # EXERCÍCIO 2.3 — Dicionário de dicionários (aninhado)
@@ -175,7 +181,8 @@ vendas_produto_b = [80, 90, 110, 140, 135, 160]
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
-
+turma = {"Davi": {"nota":4.20,"frenquencia":90},"Gustavo": {"nota":6.9, "frequencia":85},"Matheus":{"nota":6.7,"frequencia":80}}
+# print(turma["Gustavo"]["nota"])         
 
 # ---------------------------------------------------------------------------
 # [EXTRA] EXERCÍCIO 2.4 — Iterar sobre dicionário
@@ -186,7 +193,8 @@ vendas_produto_b = [80, 90, 110, 140, 135, 160]
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
-
+for nome, nota in turma.items()
+ print(nome, ":", quantidade)
 
 # ---------------------------------------------------------------------------
 # [EXTRA] EXERCÍCIO 2.5 — Verificar existência de chave
