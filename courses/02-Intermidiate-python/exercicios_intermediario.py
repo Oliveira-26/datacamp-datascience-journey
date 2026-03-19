@@ -193,9 +193,8 @@ turma = {"Davi": {"nota":4.20,"frenquencia":90},"Gustavo": {"nota":6.9, "frequen
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
-for nome, nota in turma.items()
- print(nome, ":", quantidade)
-
+# for nome, notas in turma.items():
+#  print(f"{nome}: nota {notas['nota']}")
 # ---------------------------------------------------------------------------
 # [EXTRA] EXERCÍCIO 2.5 — Verificar existência de chave
 # Dado o dicionário abaixo, escreva um código que:
@@ -209,7 +208,9 @@ for nome, nota in turma.items()
 cadastro = {"nome": "Caio", "curso": "Eng. Computação", "cidade": "Salvador"}
 
 # SUA SOLUÇÃO AQUI
-
+#if cadastro.get("email")==None:
+ #print("Email não cadastrado")
+print(cadastro.get("Telefone","Não informado")) 
 
 # ---------------------------------------------------------------------------
 # [EXTRA] EXERCÍCIO 2.6 — Dictionary comprehension
