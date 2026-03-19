@@ -210,7 +210,7 @@ cadastro = {"nome": "Caio", "curso": "Eng. Computação", "cidade": "Salvador"}
 # SUA SOLUÇÃO AQUI
 #if cadastro.get("email")==None:
  #print("Email não cadastrado")
-print(cadastro.get("Telefone","Não informado")) 
+#print(cadastro.get("Telefone","Não informado")) 
 
 # ---------------------------------------------------------------------------
 # [EXTRA] EXERCÍCIO 2.6 — Dictionary comprehension
@@ -226,7 +226,8 @@ nomes = ["Ana", "Carlos", "Maria", "João"]
 
 # SUA SOLUÇÃO AQUI
 
-
+# resultado = {nome: len(nome) for nome in nomes}
+# print(resultado)
 # ============================================================================
 # PARTE 3: PANDAS
 # ============================================================================
@@ -244,7 +245,14 @@ import pandas as pd
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
-
+dados = {
+    "estado":     ["SP", "RJ", "DF", "BA", "CE"],
+    "populacao":  [12.33, 6.75, 3.05, 2.90, 2.69],
+    "area":       [1521, 1200, 5802, 693, 314],
+}
+estados = pd.DataFrame(dados)
+estados.index = ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador", "Fortaleza"]
+print(estados)
 
 # ---------------------------------------------------------------------------
 # EXERCÍCIO 3.2 — Seleção com loc e iloc
