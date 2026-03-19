@@ -246,13 +246,14 @@ import pandas as pd
 
 # SUA SOLUÇÃO AQUI
 dados = {
+    "cidade": ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador", "Fortaleza"],
     "estado":     ["SP", "RJ", "DF", "BA", "CE"],
     "populacao":  [12.33, 6.75, 3.05, 2.90, 2.69],
     "area":       [1521, 1200, 5802, 693, 314],
 }
 estados = pd.DataFrame(dados)
 estados.index = ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador", "Fortaleza"]
-print(estados)
+# print(estados)
 
 # ---------------------------------------------------------------------------
 # EXERCÍCIO 3.2 — Seleção com loc e iloc
@@ -266,7 +267,11 @@ print(estados)
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
-
+# print(estados["populacao"])
+# print(estados[["populacao"]])
+#print(estados.loc["Salvador"])
+#print(estados.iloc[2])
+#print(estados.loc["Salvador":"Fortaleza",["area","populacao"]])
 
 # ---------------------------------------------------------------------------
 # EXERCÍCIO 3.3 — Criar DataFrame a partir de CSV (simulado)
@@ -290,7 +295,14 @@ print(estados)
 #
 # Depois de ler, defina a coluna "produto" como índice.
 # ---------------------------------------------------------------------------
-
+with open("produtos.csv","w", encoding="utf-8") as f:
+    f.write("produto,preco,quantidade,categoria\n")
+    f.write("Notebook,3500,10,Eletrônicos\n")
+    f.write("Teclado,150,30,Periféricos\n")
+    f.write("Monitor,1200,15,Eletrônicos\n")
+    f.write("Webcam,200,25,Periféricos\n")
+    f.write("Headset,300,20,Áudio\n")
+df= pd.read_csv("produtos.csv", encoding="utf-8")
 # SUA SOLUÇÃO AQUI
 
 
