@@ -295,6 +295,8 @@ estados.index = ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador", "Forta
 #
 # Depois de ler, defina a coluna "produto" como índice.
 # ---------------------------------------------------------------------------
+
+# SUA SOLUÇÃO AQUI
 with open("produtos.csv","w", encoding="utf-8") as f:
     f.write("produto,preco,quantidade,categoria\n")
     f.write("Notebook,3500,10,Eletrônicos\n")
@@ -302,9 +304,7 @@ with open("produtos.csv","w", encoding="utf-8") as f:
     f.write("Monitor,1200,15,Eletrônicos\n")
     f.write("Webcam,200,25,Periféricos\n")
     f.write("Headset,300,20,Áudio\n")
-df= pd.read_csv("produtos.csv", encoding="utf-8")
-# SUA SOLUÇÃO AQUI
-
+df= pd.read_csv("produtos.csv", encoding="utf-8", index_col="produto")
 
 # ---------------------------------------------------------------------------
 # EXERCÍCIO 3.4 — Criar colunas calculadas
@@ -315,6 +315,8 @@ df= pd.read_csv("produtos.csv", encoding="utf-8")
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
+df["valor_total"] = df["preco"]*df["quantidade"]
+df["preco_com_desconto"] = df["preco"]*0.9
 
 
 # ---------------------------------------------------------------------------
@@ -329,7 +331,10 @@ df= pd.read_csv("produtos.csv", encoding="utf-8")
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
-
+# print(df["preco"].mean())
+# print(df["preco"].idxmax())
+#print(df["categoria"].value_counts())
+#print(df["valor_total"].sum())
 
 # ---------------------------------------------------------------------------
 # [EXTRA] EXERCÍCIO 3.6 — Filtragem com condições booleanas
@@ -344,6 +349,13 @@ df= pd.read_csv("produtos.csv", encoding="utf-8")
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
+#print(df[df["preco"] > 200])
+#print(df[df["categoria"]=="Periféricos"])
+#print(df[(df["preco"] > 100) & (df["quantidade"]>20)])
+#print(df[(df["categoria"]=="Eletrônicos") | (df["preco"]<100)])
+
+
+
 
 
 # ---------------------------------------------------------------------------
@@ -356,6 +368,9 @@ df= pd.read_csv("produtos.csv", encoding="utf-8")
 # ---------------------------------------------------------------------------
 
 # SUA SOLUÇÃO AQUI
+# print(df["preco"].sort_values())
+# print(df["preco"].sort_values(ascending=False))
+#print(df.sort_values(by=["categoria", "preco"], ascending=[True, False]))
 
 
 # ============================================================================
@@ -385,7 +400,15 @@ dados_vendas = {
 }
 
 # SUA SOLUÇÃO AQUI
-
+dadosframe=pd.DataFrame(dados_vendas)
+dadosframe["receita"] = dadosframe["preco_medio"]*dadosframe["unidades_vendidas"]
+mes_maior = dadosframe.loc[dadosframe["receita"].idxmax(), "mes"]
+# totalsemestre=dadosframe["receita"].sum()
+# plt.bar(dadosframe["mes"],dadosframe["receita"])
+# plt.title(f"Receita por mês {totalsemestre}")
+# plt.xlabel("meses")
+# plt.ylabel("valores")
+# plt.show()
 
 # ---------------------------------------------------------------------------
 # [EXTRA] EXERCÍCIO 4.2 — Pensamento analítico
@@ -401,9 +424,9 @@ dados_vendas = {
 # ---------------------------------------------------------------------------
 
 # SUAS RESPOSTAS AQUI (em comentários):
-# a)
-# b)
-# c)
+# a) as vendas tem aumentado,pois a cada mês que passa o número de unidades vendidas aumenta
+# b) neste caso sim, pois o mês de Junho ocorreu a maior quantidade de vendas com o maior preço medio de produto vendido
+# c)focaria mais esforços para repetir o mês de junho entendendo o poruqe dele ter sido maior
 
 
 #print("\n" + "="*60)
